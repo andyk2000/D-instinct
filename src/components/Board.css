@@ -1,0 +1,49 @@
+.board {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    max-width: 1500px;
+    margin-top: 200px;
+}
+
+.board-left {
+    vertical-align: 20px;
+    padding: 10px;
+    margin-left: 10%;
+
+}
+.board-right {
+    margin-left: 20px;
+    padding-right: 10%;
+}
+
+.board-left-container {
+    margin-right: 20px;
+    align-items: flex-start;
+}
+
+.title-cover {
+    font-size: 50px;
+    max-width: 300px;
+    text-align: left;
+    line-height: 1.5; /* Change the line spacing */
+    margin-left: 0;
+}
+
+.author {
+    font-size: 20px;
+    text-align: right;
+    margin-right: 0;
+    padding-bottom: 20px;
+    padding-top: 10px;
+}
+
+.pic-frame {
+    align-self: center;
+    width: 400px;
+    height: 550px;
+    margin-left: 75px;
+    border-bottom-left-radius: 60px;
+    background-color: #E9B9C4;
+}
