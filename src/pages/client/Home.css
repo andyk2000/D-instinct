@@ -1,0 +1,25 @@
+.board {
+    background: #39533C;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    max-width: 1500px;
+    margin-top: 200px;
+}
+
+.board-left {
+    vertical-align: 20px;
+    padding: 10px;
+    margin-right: 20px;
+}
+.board-right {
+    margin-left: 20px;
+    padding: 10px;
+}
+
+.title-cover {
+    font-size: 50px;
+    max-width: 300px;
+    left: 0px;
+}

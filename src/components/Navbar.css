@@ -1,10 +1,10 @@
 .navbar {
-    background: linear-gradient(90deg, rgb(28, 27, 27) 0%, rgb(26, 23, 23) 100%);
+    background: transpqrent;
     height: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 0.9rem;
+    font-size: 1rem;
     position: sticky;
     top: 0;
     z-index: 999;
@@ -22,7 +22,7 @@
   }
   
   .navbar-logo {
-    color: #fff;
+    color: #000;
     justify-self: start;
     margin-left: 20px;
     cursor: pointer;
@@ -40,21 +40,20 @@
   .nav-menu {
     display: grid;
     grid-template-columns: repeat(5, auto);
-    grid-gap: 9px;
+    grid-gap: 10px;
     list-style: none;
     text-align: center;
     width: 60vw;
     justify-content: center;
     margin-right: 2rem;
-    align-self: center;
   }
   
   .nav-item {
-    height: 20px;
+    height: 80px;
   }
   
   .nav-links {
-    color: #fff;
+    color: #000;
     display: flex;
     align-items: center;
     text-decoration: none;
@@ -63,7 +62,7 @@
   }
   
   .nav-links:hover {
-    border-bottom: 4px solid #fff;
+    border-bottom: 4px solid #000;
     transition: all 0.2s ease-out;
   }
   
