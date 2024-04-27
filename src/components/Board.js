@@ -10,7 +10,7 @@ function Board() {
             <p className='title-cover'>Ask for what you want and be prepared to get it!</p>
             <p className='author'>By Diane U   wamariya</p>
             <div className='button'>
-              <Button className='btns' buttonStyle='btn--outline' buttonSize='btn--large'>SUBSCRIBE</Button>
+              <Button className='btns' buttonStyle='btn--primary' buttonSize='btn--large'>SUBSCRIBE</Button>
             </div>
           </div>
         </div>
@@ -23,4 +23,4 @@ function Board() {
   )
 }
 
-export default Board
+export default Board;
