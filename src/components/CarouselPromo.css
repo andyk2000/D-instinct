@@ -1,19 +1,18 @@
 .carousel {
-    margin-left: 15%;
-    margin-right: 15%;
-    background: rgb(44, 44, 44);
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 .cards-container {
     margin-top: 20px;
-    
+    height: 100px;
 }
 
 .card {
-    width: 20%;
+    width: 40%;
     height: 35%;
-    margin-right: 50px;
-    background: #39533C;
+    margin-right: 100px;
+    cursor: pointer;
 }
 
 .card-img {
@@ -35,5 +34,14 @@
 }
 
 .card-button {
+    background-color: #000;
+    color: #fff;
+    font-weight: 30px;
+    width: 100px;
+    height: 40px;
+    border-style: none;
+}
 
+.card :hover {
+    height: 50%;
 }

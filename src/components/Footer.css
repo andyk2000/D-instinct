@@ -1,0 +1,9 @@
+.footer {
+    margin-top: 7%;
+    background: #252525;
+}
+.footer-part1 {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-gap: 5px;
+}

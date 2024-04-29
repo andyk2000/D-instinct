@@ -12,11 +12,12 @@ function CarouselPromo() {
     infinite: true,
     speed: 500,
     slidesToShow: 3,
-    slidesToScroll: 3
+    slidesToScroll: 1
   };
 
   return (
     <div className='carousel'>
+      <h1>LATEST ARTICLE</h1>
       <div className='cards-container'>
         <Slider {...settings}>
           {data.map((d) => (
