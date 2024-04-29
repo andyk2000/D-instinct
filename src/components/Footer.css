@@ -7,3 +7,25 @@
     grid-template-columns: repeat(4, auto);
     grid-gap: 5px;
 }
+
+.footer-logo {
+    font-size: 50px;
+}
+
+.footer-logo-img {
+    text-decoration: none;
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.footer-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-element-1 {
+    text-decoration: none;
+    color: black;
+    margin-bottom: 10px;
+    align-items: center;
+}
