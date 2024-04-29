@@ -1,8 +1,9 @@
-import React, { useState } from 'react'
-import Navbar from '../../components/Navbar';
+import React, { useState } from 'react';
 import SearchIcon from '@mui/icons-material/Search';
-import { Category } from '@mui/icons-material';
-import './Categories.css'
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import ChatBubbleIcon from '@mui/icons-material/ChatBubble';
+import './Categories.css';
+import Footer from '../../components/Footer';
 
 function Categories() {
     const [activeTab, setActiveTab] = useState('Body');
@@ -22,26 +23,37 @@ function Categories() {
             <h3 className='category-ordinary'>SOCIETY</h3>
         </div>
         <div className='articles'>
-            {data.map((d) => {
-                <div className='article' key={d.title}>
-                    <img className='article-img' src={d.img}/>
+            {data.map((d) => (
+                <div key={d.title} className='article'>
+                    <img className='article-img' src={d.img} />
                     <div className='article-info'>
                         <p className='article-date'>{d.date}</p>
-                        <h2 className='article-title'>{d.title}</h2>
-                        <p className='author'>{d.author}</p>
+                        <h2 className='article-title'>{d.name}</h2>
+                        <p className='article-author'>{d.author}</p>
                         <p className='article-summary'>{d.summary}</p>
-                        <button className='read-more'>READ MORE</button>
+                        <div className='article-action-section'>
+                            <div className='like-section'>
+                                <FavoriteIcon />
+                                <p className='like'>43</p>
+                            </div>
+                            <div className='comment-section'>
+                                <ChatBubbleIcon />
+                                <p className='comment'>13</p>
+                            </div>
+                            <button className='read-more'>READ MORE</button>
+                        </div>
                     </div>
                 </div>
-            })}
+            ))}
         </div>
+        <Footer />
     </div>
   )
 }
 
 const data = [
     {
-        title: 'How Your Backyard Can Become a Research Lab',
+        name: 'How Your Backyard Can Become a Research Lab',
         date: "11/01/2024",
         category: "Body",
         author: "Diane uwamariya",
