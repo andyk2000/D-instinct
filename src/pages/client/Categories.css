@@ -1,0 +1,51 @@
+.categories-tab {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.search-bar {
+    margin-top: 10px;
+    align-content: center;
+}
+
+.search-input {
+    border-left-style: none;
+    border-right-style: none;
+    border-top-style: none;
+    width: 80%;
+    height: 30px;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.search-icon {
+    align-self: center;
+    background: transparent;
+    border-style: none;
+    border-width: 2px;
+    border-color: rgb(68, 68, 68);
+    width: 10%;
+    height: 10%;
+}
+
+.category-nav{
+    margin-top: 30PX;
+    margin-left: 60px;
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-gap: 0px;
+    align-self: center;
+}
+
+.category-ordinary {
+    padding-bottom: 5px;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.category-ordinary:hover {
+    border-bottom: 5px solid #000;
+    transition: all 0.3s ease-out;
+}

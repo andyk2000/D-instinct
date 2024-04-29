@@ -6,6 +6,7 @@
     align-items: center;
     max-width: 1500px;
     background: #fff;
+    margin-top: -2%;
 }
 
 .board-left {
@@ -49,7 +50,7 @@
     background: #fff;
     align-self: center;
     width: 400px;
-    height: 550px;
+    height: 530px;
     margin-left: 75px;
     border-bottom-left-radius: 60px;
     background-color: #E9B9C4;
