@@ -5,25 +5,30 @@
     justify-content: space-between;
     align-items: center;
     max-width: 1500px;
+    background: #fff;
 }
 
 .board-left {
+    background: #fff;
     vertical-align: 20px;
     padding: 10px;
     margin-left: 10%;
 
 }
 .board-right {
+    background: #fff;
     margin-left: 20px;
     padding-right: 10%;
 }
 
 .board-left-container {
+    background: #fff;
     margin-right: 20px;
     align-items: flex-start;
 }
 
 .title-cover {
+    background: #fff;
     font-size: 50px;
     max-width: 300px;
     text-align: left;
@@ -32,6 +37,7 @@
 }
 
 .author {
+    background: #fff;
     font-size: 20px;
     text-align: right;
     margin-right: 0;
@@ -40,10 +46,15 @@
 }
 
 .pic-frame {
+    background: #fff;
     align-self: center;
     width: 400px;
     height: 550px;
     margin-left: 75px;
     border-bottom-left-radius: 60px;
     background-color: #E9B9C4;
+}
+
+.button {
+    background: #fff;
 }
