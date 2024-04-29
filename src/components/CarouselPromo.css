@@ -1,0 +1,39 @@
+.carousel {
+    margin-left: 15%;
+    margin-right: 15%;
+    background: rgb(44, 44, 44);
+}
+
+.cards-container {
+    margin-top: 20px;
+    
+}
+
+.card {
+    width: 20%;
+    height: 35%;
+    margin-right: 50px;
+    background: #39533C;
+}
+
+.card-img {
+    display: none;
+}
+
+.card-text {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.card-title {
+    font-size: 30px;
+    font-weight: 300;
+    align-self: center;
+}
+
+.card-summary {
+    display: none;
+}
+
+.card-button {
+
+}

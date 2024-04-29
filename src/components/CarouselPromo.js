@@ -1,24 +1,37 @@
 import React from 'react';
-
+import Slider from 'react-slick';
+import './CarouselPromo.css';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 
 function CarouselPromo() {
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 3
+  };
+
   return (
     <div className='carousel'>
-      <div className=''>
-        {data.map((d) => (
-          <div>
-            <div>
-              <img src={d.img} alt=""/>
+      <div className='cards-container'>
+        <Slider {...settings}>
+          {data.map((d) => (
+            <div key={d.name} className='card'>
+              <div className='card-img'>
+                <img src={d.img} alt=""/>
+              </div>
+              <div className='card-text'>
+                <p className='card-title'>{d.name}</p>
+                <p className='card-summary'>{d.summary}</p>
+                <button className='card-button'>Read More</button>
+              </div>
             </div>
-
-            <div>
-              <p>{d.name}</p>
-              <p>{d.summary}</p>
-              <button>Read More</button>
-            </div>
-          </div>
-        ))}
+          ))}
+        </Slider>
       </div>
     </div>
   )
@@ -57,4 +70,4 @@ const data = [
   },
 ]
 
-export default CarouselPromo
+export default CarouselPromo;
