@@ -6,17 +6,18 @@ import PaymentIcon from '@mui/icons-material/Payment';
 import LogoutIcon from '@mui/icons-material/Logout';
 import { Link } from 'react-router-dom';
 import './Sidebar.css';
+import DistinctLogo from "../../../images/Dinstinctlogo.png"
 
 function Sidebar() {
   return (
     <div className='side-bar'>
-      <div className='image frame'>
-        <img src=''
+      <div className='Admin-frame'>
+        <p className='wlc'> Welcome back!</p>
       </div>
       <div className='tab-container'>
         <div className='home-tab'>
           <HomeIcon className='home-icon' />
-          <p className='home-label'><Link to='/home' className='home-txt'>Home</Link></p>
+          <p className='home-label'><Link to='/dashboard' className='home-txt'>Home</Link></p>
         </div>
         <div className='data-tab'>
           <DataUsageIcon className='data-icon' />
@@ -33,7 +34,7 @@ function Sidebar() {
       </div>
       <div className='logout-tab'>
         <LogoutIcon className='logout-icon' />
-        <p className='logout-label'><Link to='/logout' className='logout-txt'>Logout</Link></p>
+        <p className='logout-label'><Link to='/' className='logout-txt'>Logout</Link></p>
       </div>
     </div>
   );
