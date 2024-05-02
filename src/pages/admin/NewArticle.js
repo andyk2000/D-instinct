@@ -37,6 +37,17 @@ function NewArticle() {
         title: '',
         content: ''
     });
+    const [selectedCategory, setSelectedCategory] = useState('');
+
+    const handleCategoryChange = (e) => {
+        setSelectedCategory(e.target.value);
+    };
+
+    const [selectedLanguage, setSelectedLanguage] = useState('');
+
+    const handleLanguageChange = (e) => {
+        setSelectedLanguage(e.target.value);
+    };
 
   return (
     <div className='New-Article'>
@@ -44,24 +55,63 @@ function NewArticle() {
             <ArrowBackIcon className='nav-back'/>
             <p className='title'>New Article</p>
         </div>
-        <div className='row'>
+        <div className='article-form'>
             <div className='picture-sec'>
-                <input 
-                    type='file' 
-                    id='picture' 
-                    name='picture' 
-                    onChange={handlePictureChange} 
-                    accept='image/*'
-                />
+                <div className='picture-frame'>
+                    <input 
+                        type='file' 
+                        id='picture' 
+                        name='picture' 
+                        onChange={handlePictureChange} 
+                        accept='image/*'
+                        className='picture'
+                    />
+                </div>
             </div>
             <div className='editor'>
-                <ReactQuill 
-                    theme='snow' 
-                    value={value} 
-                    onChange={setValue} 
-                    className='editor-input'
-                    modules={modules}
+                <div className='title-sec'>
+                    <p className='title-label'>Title</p>
+                    <input className='title-input' />
+                </div>
+                <div className="category-sec">
+                    <p className='category-label'>Category</p>
+                    <select id="category" value={selectedCategory} onChange={handleCategoryChange}>
+                        <option value="Body">Body</option>
+                        <option value="Spirit">Spirit</option>
+                        <option value="Soul">Soul</option>
+                        <option value="Society">Society</option>
+                    </select>
+                </div>
+                <div className='language-sec'>
+                    <p className='language-label'>Language</p>
+                    <select id="category" value={selectedLanguage} onChange={handleLanguageChange}>
+                        <option value="Body">Francais</option>
+                        <option value="Spirit">English</option>
+                    </select>
+                </div>
+                <div className='description-sec'>
+                    <p className='description-label'>Description</p>
+                    <textarea />
+                </div>
+                <div className='keywords-section'>
+                    <p className='keywords'>#Keyword</p>
+                </div>
+                <div className='buttons-section'>
+                    <button className='delete-btn'>DELETE</button>
+                    <button className='draft-btn'>DRAFT</button>
+                    <button className='preview-btn'>PREVIEW</button>
+                    <button className='publish-btn'>PUBLISH</button>
+                </div>
+                <div className='content-sec'>
+                    <p className='content-label'>Content</p>
+                    <ReactQuill 
+                        theme='snow' 
+                        value={value} 
+                        onChange={setValue} 
+                        className='content-input'
+                        modules={modules}
                     />
+                </div>
             </div>
         </div>
 
