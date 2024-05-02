@@ -6,7 +6,7 @@ import Navbar from './components/Navbar';
 import Categories from './pages/client/Categories';
 import Article from './pages/client/Article';
 import NewArticle from './pages/admin/NewArticle';
-import { Dashboard } from '@mui/icons-material';
+import Dashboard from './pages/admin/Dashboard';
 
 function App() {
   return (

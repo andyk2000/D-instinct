@@ -1,12 +1,10 @@
-import React from 'react'
-import '../../../public/D-instinct logo.png';
+import React from 'react';
+import Sidebar from './Dashboard/Sidebar';
 
 function Dashboard() {
   return (
     <div className='dashboard'>
-      <div className='side-bar'>
-        <img src="../../../public/D-instinct logo.png" alt="" className='logo'/>
-      </div>
+      <Sidebar />
       <div className='main'>
         <div className='nav-bar'>
 
@@ -19,4 +17,4 @@ function Dashboard() {
   )
 }
 
-export default Dashboard
+export default Dashboard;
