@@ -6,6 +6,7 @@ import Navbar from './components/Navbar';
 import Categories from './pages/client/Categories';
 import Article from './pages/client/Article';
 import NewArticle from './pages/admin/NewArticle';
+import { Dashboard } from '@mui/icons-material';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path='/Articles' exact Component={Categories}></Route>
         <Route path="/Article" exact Component={Article}></Route>
         <Route path="/New-Article" exact Component={NewArticle}></Route>
+        <Route path="/Admin-dashboard" exact Component={Dashboard}></Route>
       </Routes>
         
     </Router>

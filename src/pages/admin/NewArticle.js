@@ -53,7 +53,7 @@ function NewArticle() {
     <div className='New-Article'>
         <div className='nav-bar'>
             <ArrowBackIcon className='nav-back'/>
-            <p className='title'>New Article</p>
+            <p className='page-header'>New Article</p>
         </div>
         <div className='article-form'>
             <div className='picture-sec'>
@@ -68,14 +68,14 @@ function NewArticle() {
                     />
                 </div>
             </div>
-            <div className='editor'>
+            <div className='info-sec'>
                 <div className='title-sec'>
                     <p className='title-label'>Title</p>
-                    <input className='title-input' />
+                    <input className='title-input' placeholder='TITLE OF THE STORY'/>
                 </div>
                 <div className="category-sec">
                     <p className='category-label'>Category</p>
-                    <select id="category" value={selectedCategory} onChange={handleCategoryChange}>
+                    <select id="category" className='category-input' value={selectedCategory} onChange={handleCategoryChange}>
                         <option value="Body">Body</option>
                         <option value="Spirit">Spirit</option>
                         <option value="Soul">Soul</option>
@@ -84,23 +84,14 @@ function NewArticle() {
                 </div>
                 <div className='language-sec'>
                     <p className='language-label'>Language</p>
-                    <select id="category" value={selectedLanguage} onChange={handleLanguageChange}>
+                    <select id="category" className='language-input' value={selectedLanguage} onChange={handleLanguageChange}>
                         <option value="Body">Francais</option>
                         <option value="Spirit">English</option>
                     </select>
                 </div>
                 <div className='description-sec'>
                     <p className='description-label'>Description</p>
-                    <textarea />
-                </div>
-                <div className='keywords-section'>
-                    <p className='keywords'>#Keyword</p>
-                </div>
-                <div className='buttons-section'>
-                    <button className='delete-btn'>DELETE</button>
-                    <button className='draft-btn'>DRAFT</button>
-                    <button className='preview-btn'>PREVIEW</button>
-                    <button className='publish-btn'>PUBLISH</button>
+                    <textarea className='description-input'/>
                 </div>
                 <div className='content-sec'>
                     <p className='content-label'>Content</p>
@@ -111,6 +102,15 @@ function NewArticle() {
                         className='content-input'
                         modules={modules}
                     />
+                </div>
+                <div className='keywords-section'>
+                    <p className='keywords'>#Keyword</p>
+                </div>
+                <div className='buttons-sec'>
+                    <button className='delete-btn'>DELETE</button>
+                    <button className='draft-btn'>DRAFT</button>
+                    <button className='preview-btn'>PREVIEW</button>
+                    <button className='publish-btn'>PUBLISH</button>
                 </div>
             </div>
         </div>
