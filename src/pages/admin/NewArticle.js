@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import ReactQuill from 'react-quill';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import "react-quill/dist/quill.snow.css";
 import "./NewArticle.css";
 
@@ -26,10 +27,33 @@ function NewArticle() {
         setValue(newValue);
     };
 
-  return (
-    <div className='New Article'>
+    const handlePictureChange = (e) => {
+        const picture = e.target.files[0];
+        setFormData({ ...formData, picture });
+    };
 
+    const [formData, setFormData] = useState({
+        picture: null,
+        title: '',
+        content: ''
+    });
+
+  return (
+    <div className='New-Article'>
+        <div className='nav-bar'>
+            <ArrowBackIcon className='nav-back'/>
+            <p className='title'>New Article</p>
+        </div>
         <div className='row'>
+            <div className='picture-sec'>
+                <input 
+                    type='file' 
+                    id='picture' 
+                    name='picture' 
+                    onChange={handlePictureChange} 
+                    accept='image/*'
+                />
+            </div>
             <div className='editor'>
                 <ReactQuill 
                     theme='snow' 
@@ -39,7 +63,6 @@ function NewArticle() {
                     modules={modules}
                     />
             </div>
-            <div className='preview' dangerouslySetInnerHTML={{ __html: value}}/>
         </div>
 
     </div>
