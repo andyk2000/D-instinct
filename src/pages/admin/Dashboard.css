@@ -1,4 +1,40 @@
 .dashboard {
   display: flex;
   flex-direction: row;
+  background-color: #3f5270;
+  height: 100%;
+}
+
+.main {
+  background: transparent;
+  width: 70%;
+  margin-left: 0%;
+}
+
+.nav-bar {
+  width: 100%;
+  height: 10%;
+  margin-left: 10%;
+  background: transparent;
+  display: flex;
+  flex-direction: row;
+}
+
+.search-bar {
+  width: 100%;
+  height: 70%;
+  background: transparent;
+  border-top-style: none;
+  border-left-style: none;
+  border-right-style: none;
+  color: rgb(14, 14, 14);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: rgb(14, 14, 14);
+  padding: 10px;
+}
+
+.search-btn {
+  width: 100%;
+  height: 70%;
 }
