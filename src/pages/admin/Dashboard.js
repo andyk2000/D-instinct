@@ -13,7 +13,17 @@ function Dashboard() {
           <SearchIcon className='search-btn' />
         </div>
         <div className='main-area'>
+          <div className='cards'>
+            <div className='card-container' >
+              
+            </div>
+          </div>
+          <div className='graph'>
 
+          </div>
+          <div className='table'>
+
+          </div>
         </div>
       </div>
     </div>
