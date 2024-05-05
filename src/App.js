@@ -7,6 +7,7 @@ import Categories from './pages/client/Categories';
 import Article from './pages/client/Article';
 import NewArticle from './pages/admin/NewArticle';
 import Dashboard from './pages/admin/Dashboard';
+import Articles from './pages/admin/Articles';
 
 function App() {
   return (
@@ -17,7 +18,8 @@ function App() {
         <Route path='/Articles' exact Component={Categories}></Route>
         <Route path="/Article" exact Component={Article}></Route>
         <Route path="/New-Article" exact Component={NewArticle}></Route>
-        <Route path="/Admin-dashboard" exact Component={Dashboard}></Route>
+        <Route path="/Admin-dashboard/home" exact Component={Dashboard}></Route>
+        <Route path="/Admin-dashboard/Articles" exact Component={Articles}></Route>
       </Routes>
         
     </Router>

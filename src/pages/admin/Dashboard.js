@@ -2,8 +2,6 @@ import React, { useEffect, useState } from 'react';
 import Sidebar from './Dashboard/Sidebar';
 import "./Dashboard.css";
 import SearchIcon from '@mui/icons-material/Search';
-import { Bar, Chart } from 'react-chartjs-2'; // Import Bar component from react-chartjs-2
-import { UserData } from "../../data/Data";
 
 function Dashboard() {
 
@@ -25,7 +23,7 @@ function Dashboard() {
             
           </div>
           <div className='table'>
-            
+
           </div>
         </div>
       </div>
