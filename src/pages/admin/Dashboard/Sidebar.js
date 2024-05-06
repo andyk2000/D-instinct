@@ -6,7 +6,6 @@ import PaymentIcon from '@mui/icons-material/Payment';
 import LogoutIcon from '@mui/icons-material/Logout';
 import { Link } from 'react-router-dom';
 import './Sidebar.css';
-import DistinctLogo from "../../../images/Dinstinctlogo.png"
 
 function Sidebar() {
   return (

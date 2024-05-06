@@ -1,90 +1,26 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import "./Articles.css";
 import DataTable from 'react-data-table-component';
 import Sidebar from './Dashboard/Sidebar';
 import SearchIcon from '@mui/icons-material/Search';
+import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 function Articles() {
 
-    const columns = [
-        {
-            name: 'Title',
-            selector: row => row.title,
-            sortable: true
-        },
-        {
-            name: "Author",
-            selector: row => row.author,
-            sortable: true
-        },
-        {
-            name: "Date",
-            selector: row => row.date
-        },
-        {
-            name: "views",
-            selector: row => row.views,
-            sortable: true
-        },
-        {
-            name: "Likes",
-            selector: row => row.likes,
-            sortable: true
-        },
-        {
-            name: "Comments",
-            selector: row => row.comments,
-            sortable: true
-        },
-    ]
+    const [columns, setColumns] = useState([]);
 
-    const data = [
-        {
-            id: 1,
-            title: "Life and death",
-            author: "diane uwamariya",
-            date: "05-05-2024",
-            views: 56,
-            likes: 7,
-            comments: 4,
-        },
-        {
-            id: 2,
-            title: "from homelessness to stardom",
-            author: "diane uwamariya",
-            date: "07-05-2024",
-            views: 106,
-            likes: 18,
-            comments: 34,
-        },
-        {
-            id: 3,
-            title: "women sports, why is it still not as popular as male",
-            author: "diane uwamariya",
-            date: "03-05-2024",
-            views: 32,
-            likes: 6,
-            comments: 0,
-        },
-        {
-            id: 4,
-            title: "The benefits of morning yoga",
-            author: "diane uwamariya",
-            date: "05-05-2024",
-            views: 60,
-            likes: 23,
-            comments: 0,
-        },
-        {
-            id: 5,
-            title: "Witnessing sexual abuse at work, powerlessness",
-            author: "diane uwamariya",
-            date: "01-05-2024",
-            views: 95,
-            likes: 3,
-            comments: 50,
-        },
-    ]
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+        axios.get('http://localhost:8080/articles')
+        .then(
+            res => {
+                setColumns(Object.keys(res.data[0]))
+                setData(res.data)
+            }
+        )
+    },[])
 
     const [records, setRecords] = useState(data);
 
@@ -103,15 +39,30 @@ function Articles() {
           <input type='text' placeholder='SEARCH' className='search-bar' onChange={handlefilter} />
           <SearchIcon className='search-btn' />
         </div>
-        <div>New Article</div>
+        <div className='new-article-btn'><Link to="/New-Article">New Article</Link></div>
         <div className='table-container'>
-            <DataTable
-                columns={columns}
-                data={records}
-                selectableRows
-                fixedHeader
-                pagination
-            />
+            <table className='table'>
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Author</th>
+                        <th>Category</th>
+                        <th>Views</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {
+                        data.map((d,i) => (
+                            <tr key = {i}>
+                                <td>{d.title}</td>
+                                <td>{d.authorName}</td>
+                                <td>{d.category}</td>
+                                <td>{d.views}</td>
+                            </tr>
+                        ))
+                    }
+                </tbody>
+            </table>
         </div>
       </div>
     </div>
