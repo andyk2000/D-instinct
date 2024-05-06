@@ -5,6 +5,7 @@ import CarouselPromo from '../../components/CarouselPromo';
 import Footer from '../../components/Footer';
 import Navbar from '../../components/Navbar';
 import Featured from '../../components/Featured';
+import ContactUs from '../../components/ContatUs';
 
 function Home() {
   return (
@@ -13,6 +14,7 @@ function Home() {
       <Board />
       <Featured />
       <CarouselPromo />
+      <ContactUs />
       <Footer />
     </div>
   )

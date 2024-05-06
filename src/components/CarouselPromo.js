@@ -19,12 +19,9 @@ function CarouselPromo() {
     <div className='carousel'>
       <h1>LATEST ARTICLE</h1>
       <div className='cards-container'>
-        <Slider {...settings}>
+        <Slider {...settings} className='carousel-container'>
           {data.map((d) => (
             <div key={d.name} className='card'>
-              <div className='card-img'>
-                <img src={d.img} alt=""/>
-              </div>
               <div className='card-text'>
                 <p className='card-title'>{d.name}</p>
                 <p className='card-summary'>{d.summary}</p>
