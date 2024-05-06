@@ -1,7 +1,3 @@
-.constent {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    /* Add any other necessary styles for the parent container */
+.content {
+    background-color: #E9B9C4;
 }

@@ -5,31 +5,31 @@
     justify-content: space-between;
     align-items: center;
     max-width: 1500px;
-    background: #fff;
+    background: transparent;
     margin-top: -2%;
 }
 
 .board-left {
-    background: #fff;
+    background: transparent;
     vertical-align: 20px;
     padding: 10px;
     margin-left: 10%;
 
 }
 .board-right {
-    background: #fff;
+    background: transparent;
     margin-left: 20px;
     padding-right: 10%;
 }
 
 .board-left-container {
-    background: #fff;
+    background: transparent;
     margin-right: 20px;
     align-items: flex-start;
 }
 
 .title-cover {
-    background: #fff;
+    background: transparent;
     font-size: 50px;
     max-width: 300px;
     text-align: left;
@@ -38,24 +38,35 @@
 }
 
 .author {
-    background: #fff;
-    font-size: 20px;
+    background: transparent;
+    font-size: 15px;
     text-align: right;
     margin-right: 0;
-    padding-bottom: 20px;
-    padding-top: 10px;
+    padding-bottom: 30px;
+    padding-top: 30px;
 }
 
 .pic-frame {
-    background: #fff;
+    background: transparent;
     align-self: center;
     width: 400px;
     height: 530px;
     margin-left: 75px;
     border-bottom-left-radius: 60px;
-    background-color: #E9B9C4;
+    background-color: #39533C;
+}
+
+.button-container {
+    background: transparent;
 }
 
 .button {
-    background: #fff;
+    background-color: black;
+    color: #fff;
+    border-style: none;
+    padding-left: 9%;
+    padding-right: 9%;
+    padding-top: 7%;
+    padding-bottom: 7%;
+    cursor: pointer;
 }

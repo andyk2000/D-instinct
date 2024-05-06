@@ -1,5 +1,5 @@
 .navbar {
-    background: #fff;
+    background: transparent;
     height: 80px;
     display: flex;
     justify-content: center;
@@ -21,17 +21,16 @@
     height: 80px;
     max-width: 1500px;
   }
+
+  .logo-container {
+    height: 150%;
+    width: 160px;
+    background: transparent;
+  }
   
-  .navbar-logo {
-    background: inherit;
-    color: #000;
-    justify-self: start;
-    margin-left: 20px;
-    cursor: pointer;
-    text-decoration: none;
-    font-size: 2rem;
-    display: flex;
-    align-items: center;
+  .logo {
+    background: transparent;
+    height: 100%;
   }
   
   .fa-typo3 {
@@ -67,7 +66,8 @@
   }
   
   .nav-links:hover {
-    border-bottom: 4px solid #000;
+    color: #39533C;
+    border-bottom: 4px solid #39533C;
     transition: all 0.2s ease-out;
   }
   
@@ -89,6 +89,14 @@
     font-size: 12px;
     font-weight: 20px;
     border-width: 1px;
+    border-style: solid;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  .sign-up:hover {
+    background: #39533C;
+    border-style: none;
   }
   
   @media screen and (max-width: 960px) {

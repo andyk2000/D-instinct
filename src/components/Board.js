@@ -9,8 +9,8 @@ function Board() {
           <div className='board-left-container'>
             <p className='title-cover'>Ask for what you want and be prepared to get it!</p>
             <p className='author'>By Diane U   wamariya</p>
-            <div className='button'>
-              <Button className='btns' buttonStyle='btn--primary' buttonSize='btn--large'>SUBSCRIBE</Button>
+            <div className='button-container'>
+              <button className='button'>SUBSCRIBE</button>
             </div>
           </div>
         </div>
