@@ -82,6 +82,14 @@
   .menu-icon {
     display: none;
   }
+
+  .sign-up {
+    height: 50%;
+    width: 9%;
+    font-size: 12px;
+    font-weight: 20px;
+    border-width: 1px;
+  }
   
   @media screen and (max-width: 960px) {
     .NavbarItems {
