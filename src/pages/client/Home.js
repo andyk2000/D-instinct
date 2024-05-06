@@ -1,7 +1,7 @@
 import React from 'react';
 import Board from '../../components/Board';
 import './Home.css';
-import CarouselPromo from '../../components/CarouselPromo';
+import Caroussel from '../../components/Caroussel';
 import Footer from '../../components/Footer';
 import Navbar from '../../components/Navbar';
 import Featured from '../../components/Featured';
@@ -13,7 +13,6 @@ function Home() {
       <Navbar />
       <Board />
       <Featured />
-      <CarouselPromo />
       <ContactUs />
       <Footer />
     </div>

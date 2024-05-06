@@ -4,47 +4,52 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import ChatBubbleIcon from '@mui/icons-material/ChatBubble';
 import './Categories.css';
 import Footer from '../../components/Footer';
+import Navbar from '../../components/Navbar';
 
 function Categories() {
     const [activeTab, setActiveTab] = useState('Body');
 
   return (
-    <div className='categories-tab'>
-        <div className='search-bar'>
-            <input className='search-input' type='text' placeholder='  SEARCH...'/>
-            <button className='search-icon'>
-                <SearchIcon />
-            </button>
-        </div>
-        <div className='category-nav'>
-            <h3 className='category-ordinary'>BODY</h3>
-            <h3 className='category-ordinary'>SPIRIT</h3>
-            <h3 className='category-ordinary'>SOUL</h3>
-            <h3 className='category-ordinary'>SOCIETY</h3>
-        </div>
-        <div className='articles'>
-            {data.map((d) => (
-                <div key={d.title} className='article'>
-                    <img className='article-img' src={d.img} />
-                    <div className='article-info'>
-                        <p className='article-date'>{d.date}</p>
-                        <h2 className='article-title'>{d.name}</h2>
-                        <p className='article-author'>{d.author}</p>
-                        <p className='article-summary'>{d.summary}</p>
-                        <div className='article-action-section'>
-                            <div className='like-section'>
-                                <FavoriteIcon />
-                                <p className='like'>43</p>
+    <div>
+        <Navbar />
+        <div className='categories-tab'>
+            <div className='search-bar'>
+                <input className='search-input' type='text' placeholder='  SEARCH...'/>
+                <button className='search-icon'>
+                    <SearchIcon />
+                </button>
+            </div>
+            <div className='category-nav'>
+                <h3 className='category-ordinary'>BODY</h3>
+                <h3 className='category-ordinary'>SPIRIT</h3>
+                <h3 className='category-ordinary'>SOUL</h3>
+                <h3 className='category-ordinary'>SOCIETY</h3>
+            </div>
+            <div className='articles'>
+                {data.map((d) => (
+                    <div key={d.title} className='article'>
+                        <img className='article-img' src={d.img} />
+                        <div className='article-info'>
+                            <p className='article-date'>{d.date}</p>
+                            <h2 className='article-title'>{d.name}</h2>
+                            <p className='article-author'>{d.author}</p>
+                            <p className='article-summary'>{d.summary}</p>
+                            <div className='article-action-section'>
+                                <div className='like-section'>
+                                    <FavoriteIcon />
+                                    <p className='like'>43</p>
+                                </div>
+                                <div className='comment-section'>
+                                    <ChatBubbleIcon />
+                                    <p className='comment'>13</p>
+                                </div>
+                                <button className='read-more'>READ MORE</button>
                             </div>
-                            <div className='comment-section'>
-                                <ChatBubbleIcon />
-                                <p className='comment'>13</p>
-                            </div>
-                            <button className='read-more'>READ MORE</button>
                         </div>
                     </div>
-                </div>
-            ))}
+                ))}
+            </div>
+            
         </div>
         <Footer />
     </div>

@@ -6,6 +6,7 @@
 .search-bar {
     margin-top: 10px;
     align-content: center;
+    border-style: none;
 }
 
 .search-input {
@@ -22,15 +23,13 @@
     align-self: center;
     background: transparent;
     border-style: none;
-    border-width: 2px;
-    border-color: rgb(68, 68, 68);
-    width: 10%;
+    width: fit-content;
     height: 10%;
 }
 
 .category-nav{
+    width: 100%;
     margin-top: 30PX;
-    margin-left: 60px;
     display: grid;
     grid-template-columns: repeat(4, auto);
     grid-gap: 0px;
@@ -56,24 +55,24 @@
 }
 
 .article {
-    align-self: center;
     display: flex;
-    width: 80%;
+    flex-direction: row;
+    align-self: center;
     border-bottom-style: solid;
     border-bottom-width: 1px;
     margin-top: 30px;
     padding-bottom: 30px;
-    margin-left: 100px;
 }
 
 .article-img {
-    width: 30%;
+    width: 25%;
     height: 200px;
     object-fit: cover;
 }
 
 .article-info {
     margin-left: 40px;
+    width: 100%;
 }
 
 .article-date {

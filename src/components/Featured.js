@@ -7,12 +7,12 @@ function Featured() {
   return (
     <div className='featured'>
         <div className='image-container'>
-            <img alt='' src='' className='image'/>
+            <img alt='' src={coverImage} className='cover-image'/>
         </div>
         <div className='featured-info'>
             <p className='featured-title'>Fertility plan, what are the option?</p>
             <p className='featured-author'>Diane UWAMARIYA</p>
-            <p className='featured-summary'>For women facing challenges with conception, there are various fertility options available. This article explores these options, ranging from treatments that address ovulation issues to assisted reproductive technologies (ART) like in vitro fertilization (IVF). It highlights the importance of consulting a healthcare professional to determine the most suitable course of treatment based on individual needs and circumstances. The article also emphasizes the emotional journey of fertility and offers resources for support.</p>
+            <p className='featured-summary'>For women facing challenges with conception, there are various fertility options available. This article explores these options, ranging from treatments that address ovulation issues to assisted reproductive technologies (ART) like in vitro fertilization (IVF). It highlights the importance of consulting a healthcare professional to determine the most suitable course of treatment based on individual needs and circumstances.</p>
             <button className='featured-button'>READ MORE</button>
         </div>
     </div>

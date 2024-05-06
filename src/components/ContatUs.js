@@ -18,7 +18,7 @@ function ContatUs() {
             <p className='message-label'>MESSAGE</p>
             <textarea className='message-input'/>
         </div>
-        <button className='submit'>SUBMIT</button>
+        <button className='send'>SUBMIT</button>
     </div>
   )
 }
