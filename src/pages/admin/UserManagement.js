@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import "./Articles.css";
+import "./UserManagement.css";
 import DataTable from 'react-data-table-component';
 import Sidebar from './Dashboard/Sidebar';
 import SearchIcon from '@mui/icons-material/Search';
