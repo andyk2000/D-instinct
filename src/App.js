@@ -27,6 +27,7 @@ function App() {
         <Route path="/Admin-dashboard/home" exact Component={Dashboard}></Route>
         <Route path="/Admin-dashboard/Articles" exact Component={Articles}></Route>
         <Route path="/Admin-dashboard/Users" exact Component={UserManagement}></Route>
+        <Route path="/update-article/:id" exact Component={UserManagement}></Route>
       </Routes>
         
     </Router>

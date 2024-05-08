@@ -48,6 +48,7 @@ function Articles() {
                         <th>Author</th>
                         <th>Category</th>
                         <th>Views</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -58,6 +59,10 @@ function Articles() {
                                 <td>{d.authorName}</td>
                                 <td>{d.category}</td>
                                 <td>{d.views}</td>
+                                <td>
+                                    <Link to={`/update-article/${d.ArticleID}`}>Update</Link>
+                                    <Link to="/delete">Delete</Link>
+                                </td>
                             </tr>
                         ))
                     }
