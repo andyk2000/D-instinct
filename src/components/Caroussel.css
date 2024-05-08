@@ -1,0 +1,10 @@
+.slider-container {
+    margin-left: 10%;
+    margin-right: 10%;
+    background: transparent;
+    height: fit-content;
+}
+
+.card-container {
+    background: transparent;
+}
