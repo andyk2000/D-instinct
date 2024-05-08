@@ -1,0 +1,39 @@
+.container {
+    width: 100%;
+    align-content: start;
+    margin-block: -5px;
+    background: white;
+}
+
+.about-container {
+    margin-top: 30px;
+    margin-left: 10%;
+    margin-right: 10%;
+    background: transparent;
+}
+
+.section-container {
+    margin-bottom: 30px;
+}
+
+.section-title-container {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+}
+
+.section-title {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    font-weight: 700;
+    border-left-color: #39533C;
+    border-left-width: 5px;
+}
+
+.content-container {
+    background: transparent;
+}
+
+.content {
+    background: transparent;
+}

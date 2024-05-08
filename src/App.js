@@ -10,6 +10,7 @@ import Articles from './pages/admin/Articles';
 import UserManagement from './pages/admin/UserManagement';
 import Login from './pages/client/Login';
 import Signup from './pages/client/Signup';
+import About from './pages/client/About';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path='/Sign-up' exact Component={Signup}></Route>
         <Route path='/Articles' exact Component={Categories}></Route>
         <Route path="/Article" exact Component={Article}></Route>
+        <Route path="/About" exact Component={About}></Route>
         <Route path="/New-Article" exact Component={NewArticle}></Route>
         <Route path="/Admin-dashboard/home" exact Component={Dashboard}></Route>
         <Route path="/Admin-dashboard/Articles" exact Component={Articles}></Route>
