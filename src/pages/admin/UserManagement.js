@@ -22,10 +22,6 @@ function UserManagement() {
             });
     }, []);
 
-    const handleDelete = (userId) => {
-        
-    };
-
     const columns = [
         {
             name: "Username",
