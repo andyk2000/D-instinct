@@ -87,7 +87,7 @@ function Articles() {
                     <input type='text' placeholder='SEARCH' className='search-bar' onChange={handleFilter} />
                     <SearchIcon className='search-btn' />
                 </div>
-                <div className='new-article-btn'><Link to="/new-article">New Article</Link></div>
+                <div className='new-article-btn'><Link to="/new-article" className='new-article'>New Article</Link></div>
                 <div className='table-container'>
                     <DataTable
                         className='table'
