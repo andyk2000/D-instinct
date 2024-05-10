@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ReactQuill from 'react-quill';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import axios from 'axios';
 import "react-quill/dist/quill.snow.css";
 import "./ArticlesUpdate.css";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 const modules = {
     toolbar: [
@@ -25,15 +25,25 @@ const modules = {
 function ArticlesUpdate() {
     const [inputData, setInputData] = useState({title:'', category:'', language:'', summary:'', content:''})
     const navigat = useNavigate();
+    const {id}=useParams();
+
+    useEffect(() => {
+        loadUser();
+    },[])
 
     function handleSubmit(event) {
         event.preventDefault()
 
-        axios.post('http://localhost:8080/article', inputData)
+        axios.put(`http://localhost:8080/article-update/${id}`, inputData)
         .then(res => {
             alert("Article saved sucessfully!");
             navigat('/Admin-dashboard/Articles');
         }).catch(err => console.log(err));
+    }
+
+    const loadUser = async () => {
+        const result= await axios.get(`http://localhost:8080/article-update/${id}`)
+        setInputData(result.data)
     }
 
   return (
@@ -57,13 +67,14 @@ function ArticlesUpdate() {
             <div className='info-sec'>
                 <div className='title-sec'>
                     <p className='title-label'>Title</p>
-                    <input className='title-input' placeholder='TITLE OF THE STORY' onChange={e=> setInputData({...inputData, title: e.target.value})}/>
+                    <input 
+                    className='title-input'defaultValue={inputData.title} onChange={e=> setInputData({...inputData, title: e.target.value})}/>
                 </div>
                 <div className="category-sec">
                     <p className='category-label'>Category</p>
                     <select id="category" 
                         className='category-input'
-                        defaultValue="body" 
+                        defaultValue={inputData.category} 
                         onChange={e=> setInputData({...inputData, category: e.target.value})}>
                         <option value="body">Body</option>
                         <option value="spirit">Spirit</option>
@@ -74,9 +85,9 @@ function ArticlesUpdate() {
                 <div className='language-sec'>
                     <p className='language-label'>Language</p>
                     <select 
-                        id="category" 
+                        id="language" 
                         className='language-input'
-                        defaultValue="francais" 
+                        defaultValue={inputData.language} 
                         onChange={e=> setInputData({...inputData, language: e.target.value})}>
                         <option value="francais">Francais</option>
                         <option value="english">English</option>
@@ -84,7 +95,7 @@ function ArticlesUpdate() {
                 </div>
                 <div className='description-sec'>
                     <p className='description-label'>Summary</p>
-                    <textarea className='description-input' onChange={e=> setInputData({...inputData, summary: e.target.value})}/>
+                    <textarea className='description-input' defaultValue={inputData.summary} onChange={e=> setInputData({...inputData, summary: e.target.value})}/>
                 </div>
                 <div className='content-sec'>
                     <p className='content-label'>Content</p>

@@ -7,6 +7,7 @@ import Article from './pages/client/Article';
 import NewArticle from './pages/admin/NewArticle';
 import Dashboard from './pages/admin/Dashboard';
 import Articles from './pages/admin/Articles';
+import ArticlesUpdate from './pages/admin/ArticlesUpdate';
 import UserManagement from './pages/admin/UserManagement';
 import Login from './pages/client/Login';
 import Signup from './pages/client/Signup';
@@ -26,6 +27,7 @@ function App() {
         <Route path="/New-Article" exact Component={NewArticle}></Route>
         <Route path="/Admin-dashboard/home" exact Component={Dashboard}></Route>
         <Route path="/Admin-dashboard/Articles" exact Component={Articles}></Route>
+        <Route path="/Admin-dashboard/Articles-Update/:id" exact Component={ArticlesUpdate}></Route>
         <Route path="/Admin-dashboard/Users" exact Component={UserManagement}></Route>
         <Route path="/update-article/:id" exact Component={UserManagement}></Route>
       </Routes>

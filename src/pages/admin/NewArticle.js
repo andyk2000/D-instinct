@@ -23,8 +23,8 @@ const modules = {
 };
 
 function NewArticle() {
-    const [inputData, setInputData] = useState({title:'', category:'', language:'', summary:'', content:''})
-    const navigat = useNavigate();
+    const [inputData, setInputData] = useState({coverImage: null,title:'', category:'', language:'', summary:'', content:''})
+    const navigate = useNavigate();
 
     function handleSubmit(event) {
         event.preventDefault()
@@ -32,7 +32,7 @@ function NewArticle() {
         axios.post('http://localhost:8080/article', inputData)
         .then(res => {
             alert("Article saved sucessfully!");
-            navigat('/Admin-dashboard/Articles');
+            navigate('/Admin-dashboard/Articles');
         }).catch(err => console.log(err));
     }
 
@@ -51,6 +51,7 @@ function NewArticle() {
                         name='picture' 
                         accept='image/*'
                         className='picture'
+                        onChange={e=> setInputData({...inputData, coverImage: e.target.value})}
                     />
                 </div>
             </div>

@@ -25,9 +25,18 @@ function Articles() {
             });
     }, []);
 
-    const handleDeleteArticle = (articleId) => {
-        
+    const handleDeleteArticle = async (articleId) => {
+        const conf = window.confirm("Do want to permanently delete this article?");
+
+        if(conf){
+            await axios.delete(`http://localhost:8080/article-delete/${articleId}`);
+            alert("the article has been deleted");
+        }
     };
+
+    const handleUpdateArticle = (articleId) => {
+        navigate(`/Admin-dashboard/Articles-Update/${articleId}`);
+    }
 
     const handleFilter = (event) => {
         const newData = data.filter(row => {
@@ -61,8 +70,9 @@ function Articles() {
             name: "Actions",
             cell: row => (
                 <div className='button-container'>
-                    <button onClick={() => {}} className='update-container'><ModeEditOutlineTwoToneIcon className='update'/></button>
-                    <button onClick={() => handleDeleteArticle(row.articleId)} className='delete-container'><DeleteOutlineTwoToneIcon className='delete'/></button>
+                    <p className='id'>{row.ArticleId}</p>
+                    <button onClick={() => handleUpdateArticle(row.articleID)} className='update-container'><ModeEditOutlineTwoToneIcon className='update'/></button>
+                    <button onClick={() => handleDeleteArticle(row.articleID)} className='delete-container'><DeleteOutlineTwoToneIcon className='delete'/></button>
                 </div>
             ),
             button: true

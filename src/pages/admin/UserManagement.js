@@ -35,7 +35,7 @@ function UserManagement() {
         },
         {
             name: "Account Type",
-            selector: row => row.accountType
+            selector: row => row.acountType
         },
         {
             name: "Plan",
