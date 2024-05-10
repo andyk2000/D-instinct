@@ -16,15 +16,15 @@ function Sidebar() {
       <div className='tab-container'>
         <div className='home-tab'>
           <HomeIcon className='home-icon' />
-          <p className='home-label'><Link to='/dashboard' className='home-txt'>Home</Link></p>
+          <p className='home-label'><Link to='/Admin-dashboard/Articles' className='home-txt'>Home</Link></p>
         </div>
         <div className='data-tab'>
           <DataUsageIcon className='data-icon' />
-          <p className='data-label'><Link to='/data' className='data-txt'>Data</Link></p>
+          <p className='data-label'><Link to='/Admin-dashboard/Users' className='data-txt'>Data</Link></p>
         </div>
         <div className='article-tab'>
           <NewspaperIcon className='article-icon' />
-          <p className='article-label'><Link to='/articles' className='article-txt'>Articles</Link></p>
+          <p className='article-label'><Link to='/Admin-dashboard/Articles' className='article-txt'>Articles</Link></p>
         </div>
         <div className='payment-tab'>
           <PaymentIcon className='payment-icon' />
