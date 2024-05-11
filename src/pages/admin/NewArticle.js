@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ReactQuill from 'react-quill';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import axios from 'axios';
@@ -23,12 +23,25 @@ const modules = {
 };
 
 function NewArticle() {
-    const [inputData, setInputData] = useState({title:'', category:'body', language:'francais', summary:'', content:'', published:'false', promote:'', coverLink:''})
+    const [inputData, setInputData] = useState({title:'', category:'body', language:'francais', summary:'', content:'', published:'', promote:'', coverLink:''})
     const navigate = useNavigate();
+    const [authors, setAuthors] = useState([]);
+
+    const loadAuthors = async () => {
+        try {
+            const response = await axios.get('http://localhost:8080/authors');
+            const filteredAuthors = response.data.filter(author => author.acountType === 'writer' || author.acountType === 'admin');
+            setAuthors(filteredAuthors);
+        } catch (error) {
+            console.error('Error loading authors:', error);
+        }
+    }
+
+    useEffect((
+        ()=>{loadAuthors();}
+    ),[])
 
     function handlePreview(event) {
-        setInputData({...inputData, published:'false'})
-
         event.preventDefault()
 
         axios.post('http://localhost:8080/article', inputData)
@@ -38,14 +51,16 @@ function NewArticle() {
         }).catch(err => console.log(err));
     }
 
-    function handlePublish(event) {
+    function publishChange() {
         setInputData({...inputData, published:'true'})
+    }
 
+    function handlePublish(event) {
         event.preventDefault()
 
         axios.post('http://localhost:8080/article', inputData)
         .then(res => {
-            alert("Article saved sucessfully!");
+            alert("Article published sucessfully!");
             navigate('/Admin-dashboard/Articles');
         }).catch(err => console.log(err));
     }
@@ -61,6 +76,17 @@ function NewArticle() {
                 <div className='title-sec'>
                     <p className='title-label'>Title</p>
                     <input className='title-input' placeholder='TITLE OF THE STORY' onChange={e=> setInputData({...inputData, title: e.target.value})}/>
+                </div>
+                <div className="category-sec">
+                    <p className='category-label'>Author</p>
+                    <select id="category" 
+                        className='category-input'
+                        defaultValue="Diane UWAMARIYA" 
+                        onChange={e=> setInputData({...inputData, category: e.target.value})}>
+                        {authors.map(author => (
+                            <option key={author.userID} value={author.fullName}>{author.fullName}</option>
+                            ))}
+                    </select>
                 </div>
                 <div className="category-sec">
                     <p className='category-label'>Category</p>
@@ -101,6 +127,17 @@ function NewArticle() {
                 </div>
                 <div className='keywords-section'>
                     <p className='keywords'>#Keyword</p>
+                </div>
+                <div className='language-sec'>
+                    <p className='language-label'>Publish</p>
+                    <select 
+                        id="publish" 
+                        className='language-input'
+                        defaultValue="unpublish"
+                        onChange={e=> setInputData({...inputData, published: e.target.value})}>
+                        <option value="unpublished">unpublish</option>
+                        <option value="unpublished">publish</option>
+                    </select>
                 </div>
                 <div className='buttons-sec'>
                     <button className='delete-btn'>DELETE</button>

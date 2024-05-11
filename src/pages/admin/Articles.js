@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import "./Articles.css";
 import DataTable from 'react-data-table-component';
 import Sidebar from './Dashboard/Sidebar';
-import SearchIcon from '@mui/icons-material/Search';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
@@ -52,13 +51,8 @@ function Articles() {
             sortable: true
         },
         {
-            name: "Author",
-            selector: row => row.authorName,
-            sortable: true
-        },
-        {
-            name: "Category",
-            selector: row => row.category,
+            name: "Publication",
+            selector: row => row.published,
             sortable: true
         },
         {
@@ -83,9 +77,8 @@ function Articles() {
         <div className='dashboard'>
             <Sidebar />
             <div className='main'>
-                <div className='nav-bar'>
+                <div className='search-container'>
                     <input type='text' placeholder='SEARCH' className='search-bar' onChange={handleFilter} />
-                    <SearchIcon className='search-btn' />
                 </div>
                 <div className='new-article-btn'><Link to="/new-article" className='new-article'>New Article</Link></div>
                 <div className='table-container'>

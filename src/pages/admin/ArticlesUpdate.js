@@ -4,7 +4,7 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import axios from 'axios';
 import "react-quill/dist/quill.snow.css";
 import "./ArticlesUpdate.css";
-import { useNavigate, useParams } from 'react-router-dom';
+import { Navigate, useNavigate, useParams, Link } from 'react-router-dom';
 
 const modules = {
     toolbar: [
@@ -23,7 +23,7 @@ const modules = {
 };
 
 function ArticlesUpdate() {
-    const [inputData, setInputData] = useState({title:'', category:'', language:'', summary:'', content:''})
+    const [inputData, setInputData] = useState({title:'', category:'body', language:'francais', summary:'', content:'', published:'', promote:'', coverLink:''})
     const navigat = useNavigate();
     const {id}=useParams();
 
@@ -41,6 +41,10 @@ function ArticlesUpdate() {
         }).catch(err => console.log(err));
     }
 
+    function navigateBack() {
+        navigat("/Admin-dashboard/Articles")
+    }
+
     const loadUser = async () => {
         const result= await axios.get(`http://localhost:8080/article-update/${id}`)
         setInputData(result.data)
@@ -48,27 +52,19 @@ function ArticlesUpdate() {
 
   return (
     <div className='New-Article'>
-        <div className='nav-bar'>
-            <ArrowBackIcon className='nav-back'/>
-            <p className='page-header'>New Article</p>
+        <div className='navbar'>
+            <ArrowBackIcon className='nav-back' onClick={navigateBack}/>
+            <p className='page-title'>New Article</p>
         </div>
         <div className='article-form'>
-            <div className='picture-sec'>
-                <div className='picture-frame'>
-                    <input 
-                        type='file' 
-                        id='picture' 
-                        name='picture' 
-                        accept='image/*'
-                        className='picture'
-                    />
-                </div>
-            </div>
             <div className='info-sec'>
                 <div className='title-sec'>
+                    <p className='title-label'>Image URL</p>
+                    <input className='title-input' defaultValue={inputData.coverLink} placeholder='Image URL' onChange={e=> setInputData({...inputData, coverLink: e.target.value})}/>
+                </div>
+                <div className='title-sec'>
                     <p className='title-label'>Title</p>
-                    <input 
-                    className='title-input'defaultValue={inputData.title} onChange={e=> setInputData({...inputData, title: e.target.value})}/>
+                    <input className='title-input'defaultValue={inputData.title} onChange={e=> setInputData({...inputData, title: e.target.value})}/>
                 </div>
                 <div className="category-sec">
                     <p className='category-label'>Category</p>
