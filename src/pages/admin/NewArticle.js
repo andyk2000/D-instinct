@@ -23,10 +23,24 @@ const modules = {
 };
 
 function NewArticle() {
-    const [inputData, setInputData] = useState({coverImage: null,title:'', category:'', language:'', summary:'', content:''})
+    const [inputData, setInputData] = useState({title:'', category:'body', language:'francais', summary:'', content:'', published:'false', promote:'', coverLink:''})
     const navigate = useNavigate();
 
-    function handleSubmit(event) {
+    function handlePreview(event) {
+        setInputData({...inputData, published:'false'})
+
+        event.preventDefault()
+
+        axios.post('http://localhost:8080/article', inputData)
+        .then(res => {
+            alert("Article saved sucessfully!");
+            navigate('/Admin-dashboard/Articles');
+        }).catch(err => console.log(err));
+    }
+
+    function handlePublish(event) {
+        setInputData({...inputData, published:'true'})
+
         event.preventDefault()
 
         axios.post('http://localhost:8080/article', inputData)
@@ -39,19 +53,11 @@ function NewArticle() {
   return (
     <div className='New-Article'>
         <div className='article-form'>
-            <div className='picture-sec'>
-                <div className='picture-frame'>
-                    <input 
-                        type='file' 
-                        id='picture' 
-                        name='picture' 
-                        accept='image/*'
-                        className='picture'
-                        onChange={e=> setInputData({...inputData, coverImage: e.target.value})}
-                    />
-                </div>
-            </div>
             <div className='info-sec'>
+            <div className='title-sec'>
+                    <p className='title-label'>Image URL</p>
+                    <input className='title-input' placeholder='TITLE OF THE STORY' onChange={e=> setInputData({...inputData, coverLink: e.target.value})}/>
+                </div>
                 <div className='title-sec'>
                     <p className='title-label'>Title</p>
                     <input className='title-input' placeholder='TITLE OF THE STORY' onChange={e=> setInputData({...inputData, title: e.target.value})}/>
@@ -73,7 +79,7 @@ function NewArticle() {
                     <select 
                         id="category" 
                         className='language-input'
-                        defaultValue="francais" 
+                        defaultValue="francais"
                         onChange={e=> setInputData({...inputData, language: e.target.value})}>
                         <option value="francais">Francais</option>
                         <option value="english">English</option>
@@ -98,9 +104,9 @@ function NewArticle() {
                 </div>
                 <div className='buttons-sec'>
                     <button className='delete-btn'>DELETE</button>
-                    <button className='draft-btn'>DRAFT</button>
-                    <button className='preview-btn' onClick={handleSubmit}>PREVIEW</button>
-                    <button className='publish-btn' >PUBLISH</button>
+                    <button className='draft-btn' onClick={handlePreview}>DRAFT</button>
+                    <button className='preview-btn' onClick={handlePreview}>PREVIEW</button>
+                    <button className='publish-btn' onClick={handlePublish}>PUBLISH</button>
                 </div>
             </div>
         </div>
