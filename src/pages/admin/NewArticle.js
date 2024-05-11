@@ -38,10 +38,6 @@ function NewArticle() {
 
   return (
     <div className='New-Article'>
-        <div className='nav-bar'>
-            <ArrowBackIcon className='nav-back'/>
-            <p className='page-header'>New Article</p>
-        </div>
         <div className='article-form'>
             <div className='picture-sec'>
                 <div className='picture-frame'>
